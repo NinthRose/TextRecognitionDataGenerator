@@ -37,7 +37,8 @@ cd out
 
 while read line;do
     name=$(echo "$line" | awk -F "\." '{print $1}')
-    content=$(echo "$line" | awk '{print $2" "$3" "$4" "$5" "$6}')
+    # content=$(echo "$line" | awk '{print $2" "$3" "$4" "$5" "$6}')
+    content=$(echo "$line" | awk '{print $2$3$4$5$6}')
     echo "$content" > $name.txt
 done < labels.txt
 
